@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+        * {
+            margin: 0;
+            font-family: "Raleway", sans-serif;
+        }
+        html,
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        /* form{
+            background-color: rgb(232,220,204);
+        } */
+
+        .log {
+            display: flex;
+            flex-direction: column;
+        }
+        .log form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .log .error {
+            margin: 10px 0px;
+        }
+
+        .log-content {
+            width: 100%;
+            display: flex;
+            min-height: 500px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .log-content input {
+            border: solid 1px #d6d6d6;
+            width: 250px;
+            padding: 10px 20px;
+            margin: 10px 0px;
+            outline: none;
+        }
+
+        .log-content input:focus {
+            border: solid 1px black;
+        }
+
+        .log-content .btn {
+            outline: none;
+            padding: 10px 0px;
+            background: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .log-content .title {
+            font-size: 40px;
+            font-weight: 900;
+            margin: 10px 0px;
+        }
+        .log-content .btn:hover {
+            background: #212121;
+        }
+        .log-content span {
+            margin: 10px 0px;
+            color: #212121;
+            font-size: 12px;
+        }
+        .log-content span button {
+            color: black;
+            padding: 0;
+            border: none;
+            outline: none;
+            font-weight: bold;
+            background: none;
+            cursor: pointer;
+        }
+        .log-content label {
+            font-size: 13px;
+        }
+
+        .log-content .log {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .log-content .login {
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+        .log-content .register {
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+
+        .log-content .animation {
+            padding: 0px 20px;
+            border-left: solid 1px #d6d6d6;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 300px;
+        }
+        .log-content .animation .title {
+            font-size: 20px;
+            color: #212121;
+            transition: all 0.5s;
+        }
+        .log-content .animation .title span {
+            font-size: 20px;
+        }
+        .log-content .lt {
+            width: 300px;
+            height: 300px;
+        }
+        .log .error {
+            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-fade-enter-active {
+            transition: all 1s ease;
+            position: absolute;
+        }
+        .slide-fade-leave-active {
+            transition: all 1s;
+            position: absolute;
+        }
+        .slide-fade-enter,
+        .slide-fade-leave-to {
+            transform: translateX(-200%);
+        }
+
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 0.5s;
+        }
+        .fade-enter,
+        .fade-leave-to {
+            width: 0px;
+            opacity: 0;
+        }
+        .error-enter-active,
+        .error-leave-active {
+            transition: opacity 0.5s;
+        }
+        .error-enter,
+        .error-leave-to {
+            opacity: 0;
+        }
+        @media (max-width: 730px) {
+            .log-content .animation {
+                display: none;
+            }
+        }
+
+        #logo{
+            height: 250px;
+            width: 250px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="log" class="log-content">
+        <div class="log">
+            <transition name="slide-fade">
+                <div v-if="log" class="login">
+                    <form action="/login" method="POST">
+                        <div class="title">Login</div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name=
+                        
+                        "email" placeholder="example@mail.com" required>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="****************" required>
+                        <input class="btn" type="submit" value="Login">
+                        <!-- <span>Don't have an account? <button onclick="register.html">&nbsp;Sign Up</button></span> -->
+                    </form>
+    
+                </div>
+            </transition>
+        </div>
+        <div class="animation">
+            <div class="title">Welcome <transition name="fade"><span v-if="log">back</span></transition> to RangRez :)</div>
+            <div>
+                <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+            </div>
+            <lottie-player class="lt" src="https://assets1.lottiefiles.com/datafiles/8I4VBobfLT0ZhRnzi3ZZl61uKHJ6yUtXkb7aKe4Z/bag.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+

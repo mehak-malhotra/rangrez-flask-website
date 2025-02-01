@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RangRez - Home</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; 
+        }
+        .navbar {
+            background-color: #bf2429; /* Navbar background color */
+        }
+        .navbar-brand {
+            color: #ffffff !important; /* Navbar brand text color */
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff !important; /* Navbar link text color */
+        }
+    
+        .my-cart {
+            margin-right: 20px;
+        }
+        .login {
+            margin-right: 20px;
+        }
+        .category-box {
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid #ccc; /* Add border for elegance */
+            border-radius: 10px; /* Add border radius */
+            overflow: hidden; /* Hide overflowing content */
+            transition: transform 0.3s ease; /* Add transition effect */
+        }
+        .category-box:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+        .category-box img {
+            width: 100%; /* Fill the container width */
+            height: 500px; /* Fixed height for all images */
+            display: block; /* Remove extra space */
+            transition: transform 0.3s ease; /* Add transition effect */
+        }
+        .category-box img:hover {
+            transform: scale(1.1); /* Scale up on hover */
+        }
+        .category-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">RangRez</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item my-cart">
+                    <a class="nav-link" href="/cart">My Cart</a>
+                </li>
+                
+                <li class="nav-item login">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item login">
+                    <a class="nav-link" href="/login">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <!-- Category Boxes -->
+    <div class="container">
+        <div class="row justify-content-center"> <!-- Center align the row -->
+            <div class="col-md-4">
+                <div class="category-box">
+                    <a href="{{ url_for('bridal') }}"> <!-- Modified href attribute -->
+                        <img src="{{ url_for('static', filename='images/indian_bridal_lehenga.jpg') }}" alt="Indian Bridal Lehengas">
+                        <div class="category-title">Indian Bridal Lehengas</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-box">
+                    <a href="{{ url_for('designer') }}"> <!-- Modified href attribute -->
+                        <img src="{{ url_for('static', filename='images/indian_designer_lehenga.jpg') }}" alt="Indian Designer Lehengas">
+                        <div class="category-title">Indian Designer Lehengas</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="category-box">
+                    <a href="{{ url_for('indo_western') }}"> <!-- Modified href attribute -->
+                        <img src="{{ url_for('static', filename='images/indo_western_lehenga.jpg') }}" alt="Indo-Western Lehengas">
+                        <div class="category-title">Indo-Western Lehengas</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
